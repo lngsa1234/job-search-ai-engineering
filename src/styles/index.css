@@ -422,3 +422,43 @@ body {
 .footer a:hover {
   text-decoration: underline;
 }
+
+.sidebar__heading--first {
+  margin-top: 0;
+}
+
+.role-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.role-toggle__btn {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.role-toggle__btn--active {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.card__links,
+.card__source {
+  font-size: 13px;
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.card__links a,
+.card__source a {
+  color: var(--accent);
+}

@@ -3,9 +3,39 @@ import data from '../data/interviewQuestions.json'
 import CategoryFilter from './CategoryFilter.jsx'
 import QuestionCard from './QuestionCard.jsx'
 
+const ROLES = [
+  { id: 'engineering', label: 'AI Engineer' },
+  { id: 'pm', label: 'AI Product Manager' },
+]
+
+const roleOf = (item) => item.role || 'engineering'
+
 export default function InterviewQuestions() {
+  const [activeRole, setActiveRole] = useState('engineering')
   const [activeCategory, setActiveCategory] = useState('all')
   const [activeCompany, setActiveCompany] = useState('all')
+
+  const roleCategories = useMemo(
+    () => data.categories.filter((c) => roleOf(c) === activeRole),
+    [activeRole]
+  )
+
+  const roleQuestions = useMemo(
+    () => data.questions.filter((q) => roleOf(q) === activeRole),
+    [activeRole]
+  )
+
+  // Only offer companies that have questions for this role
+  const roleCompanies = useMemo(() => {
+    const used = new Set(roleQuestions.flatMap((q) => q.companies || []))
+    return data.companies.filter((c) => used.has(c.id))
+  }, [roleQuestions])
+
+  const selectRole = (role) => {
+    setActiveRole(role)
+    setActiveCategory('all')
+    setActiveCompany('all')
+  }
 
   const companyLabel = useMemo(() => {
     const m = new Map()
@@ -21,17 +51,17 @@ export default function InterviewQuestions() {
 
   // Questions filtered by the active company only (used for category counts)
   const byCompany = useMemo(() => {
-    if (activeCompany === 'all') return data.questions
-    return data.questions.filter((q) => (q.companies || []).includes(activeCompany))
-  }, [activeCompany])
+    if (activeCompany === 'all') return roleQuestions
+    return roleQuestions.filter((q) => (q.companies || []).includes(activeCompany))
+  }, [roleQuestions, activeCompany])
 
   const counts = useMemo(() => {
     const map = { all: byCompany.length }
-    for (const c of data.categories) {
+    for (const c of roleCategories) {
       map[c.id] = byCompany.filter((q) => q.category === c.id).length
     }
     return map
-  }, [byCompany])
+  }, [byCompany, roleCategories])
 
   const visibleQuestions = useMemo(() => {
     if (activeCategory === 'all') return byCompany
@@ -42,6 +72,22 @@ export default function InterviewQuestions() {
     <section className="section">
       <div className="layout">
         <aside className="sidebar">
+          <div className="sidebar__heading sidebar__heading--first">Role</div>
+          <div className="role-toggle" role="radiogroup" aria-label="Role">
+            {ROLES.map((r) => (
+              <button
+                key={r.id}
+                role="radio"
+                aria-checked={r.id === activeRole}
+                className={'role-toggle__btn' + (r.id === activeRole ? ' role-toggle__btn--active' : '')}
+                onClick={() => selectRole(r.id)}
+              >
+                {r.label}
+              </button>
+            ))}
+          </div>
+
+          {roleCompanies.length > 0 && (
           <label className="company-select">
             <span>Company</span>
             <select
@@ -49,17 +95,18 @@ export default function InterviewQuestions() {
               onChange={(e) => setActiveCompany(e.target.value)}
             >
               <option value="all">All companies</option>
-              {data.companies.map((c) => (
+              {roleCompanies.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.label}
                 </option>
               ))}
             </select>
           </label>
+          )}
 
           <div className="sidebar__heading">Categories</div>
           <CategoryFilter
-            categories={data.categories}
+            categories={roleCategories}
             active={activeCategory}
             counts={counts}
             onSelect={setActiveCategory}

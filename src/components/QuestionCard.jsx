@@ -43,6 +43,27 @@ export default function QuestionCard({ question, categoryLabel, companyLabel }) 
               Answer coming soon.
             </p>
           )}
+          {question.learnMore?.length > 0 && (
+            <p className="card__links">
+              <strong>Learn more:</strong>{' '}
+              {question.learnMore.map((l, i) => (
+                <span key={l.url}>
+                  {i > 0 && ' · '}
+                  <a href={l.url} target="_blank" rel="noreferrer">
+                    {l.label}
+                  </a>
+                </span>
+              ))}
+            </p>
+          )}
+          {question.source && (
+            <p className="card__source">
+              Source:{' '}
+              <a href={question.source.url} target="_blank" rel="noreferrer">
+                {question.source.label}
+              </a>
+            </p>
+          )}
         </div>
       )}
     </article>

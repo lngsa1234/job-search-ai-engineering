@@ -38,7 +38,15 @@ export default function App() {
           >
             Outcome School
           </a>
-          .
+          . AI PM questions are from{' '}
+          <a
+            href="https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/roles/ai-product-manager/questions.md"
+            target="_blank"
+            rel="noreferrer"
+          >
+            awesome-generative-ai-guide
+          </a>{' '}
+          by Aishwarya Naresh Reganti (MIT License).
         </p>
       </footer>
     </div>
