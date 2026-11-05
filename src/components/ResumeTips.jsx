@@ -149,7 +149,7 @@ export default function ResumeTips() {
           </div>
 
           <div className="resume">
-            <Row first showNotes={showNotes} why="Contact details on one line, with GitHub and a portfolio. Reviewers for technical roles do click through to the code.">
+            <Row first showNotes={showNotes} why={r.headerWhy || 'Contact details on one line, with GitHub and a portfolio. Reviewers for technical roles do click through to the code.'}>
               <div className="paper__header">
                 <div className="paper__name">{r.name}</div>
                 <div className="paper__title">{r.title}</div>

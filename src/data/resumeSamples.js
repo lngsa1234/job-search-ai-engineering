@@ -16,7 +16,11 @@ export const RESUME_SOURCES = [
     url: 'https://gauntletai.com/night-school/what-hiring-managers-actually-look-for-in-ai-engineers',
   },
   {
-    label: 'AI Interview Atlas: role guides (FDE, applied AI engineer)',
+    label: 'Alpesh Nakrani: How to hire an AI product manager',
+    url: 'https://alpeshnakrani.com/blog/hire-ai-product-manager/',
+  },
+  {
+    label: 'AI Interview Atlas: role guides (FDE, applied AI engineer, product leadership)',
     url: 'https://github.com/eiler2005/ai-interview-atlas',
   },
 ]
@@ -220,6 +224,110 @@ export const RESUMES = [
       'Claiming depth in code an AI assistant mostly wrote. Expect to walk through it in the interview.',
     ],
   },
+  {
+    id: 'ai-pm',
+    role: 'AI Product Manager',
+    tagline:
+      'A feature list with “AI” added doesn’t pass. Reviewers want a PM who sets quality bars, designs for wrong answers, and ships imperfect models safely with business results to show for it.',
+    lookFor: [
+      'AI features shipped to production, with before-and-after outcomes',
+      'Eval literacy: a launch bar on a fixed test set, not one accuracy number',
+      'Designing for failure: fallbacks, human review, confidence cues',
+      'Cost, latency and unit economics treated as product constraints',
+      'Classic PM craft still visible: discovery, prioritization, cross-functional leadership',
+    ],
+    resume: {
+      name: 'Alex Morgan',
+      headerWhy: 'Contact details on one line. In place of GitHub, it links writing that shows how the candidate thinks about AI products. Reviewers click through to judge product taste.',
+      title: 'Senior Product Manager, AI',
+      contact: [
+        'Chicago, IL',
+        'alex.morgan@email.com',
+        'linkedin.com/in/alexmorgan',
+        'alexmorgan.substack.com',
+      ],
+      sections: [
+        {
+          heading: 'Summary',
+          paragraphs: [
+            'Product manager with 7 years in B2B SaaS, the last 3 leading LLM products in production. Shipped 4 AI features to 18k business customers, set the eval-based launch bar the company now uses for every AI release, and grew AI-attributed revenue from $0 to $9M ARR.',
+          ],
+          why: 'It establishes both halves an AI PM screen looks for in one breath: years of real PM work, and AI products in production. The eval launch bar signals quality judgment, and the revenue line shows business ownership.',
+        },
+        {
+          heading: 'Skills',
+          skills: [
+            ['AI product', 'LLM feature design, RAG and agent workflows, eval design, human-in-the-loop review, model selection and routing'],
+            ['Quality & metrics', 'Eval sets and launch thresholds, LLM-as-judge calibration, A/B testing, hallucination and escalation tracking'],
+            ['Business', 'Pricing for usage-based AI, unit economics, AI ROI cases, enterprise procurement and security reviews'],
+            ['Tools', 'SQL, Python (notebooks), Amplitude, Langfuse, Figma, prototyping with AI coding tools'],
+          ],
+          why: 'No list of model names or buzzwords. It names the judgment areas an AI PM is tested on (quality bars, economics, human review) and practical tools that show the candidate can pull their own data and prototype.',
+        },
+        {
+          heading: 'Experience',
+          jobs: [
+            {
+              title: 'Senior Product Manager, AI',
+              org: 'Helpwise · customer-support software, 900 people',
+              place: 'Chicago',
+              dates: 'Feb 2023 – Present',
+              bullets: [
+                'Launched AI Reply, an LLM drafting assistant for support agents, to 18k customer accounts; agents accept 64% of drafts with light edits, handle time fell 31%, and it drove $6.2M in new ARR through a paid add-on tier.',
+                'Defined the launch bar for every AI release: a 500-case eval set built from real tickets, thresholds on accuracy and policy violations, and a no-ship rule above a 1% unsupported-claim rate. It blocked 2 launches that would have failed customers.',
+                'Designed the failure path for AI Resolve (autonomous answers to end customers): confidence gating, instant human handoff and source citations. It reached 42% automated resolution with CSAT flat at 4.6/5.',
+                'Cut AI cost per ticket 61% with engineering by routing simple intents to a smaller model and caching shared context, which took gross margin on the add-on from 48% to 79%.',
+                'Ran discovery with 40 support leaders and killed a planned sentiment dashboard after finding no workflow it changed, moving the team to the higher-value drafting work instead.',
+              ],
+              why: 'Each bullet pairs an AI-specific decision with a business result: adoption, quality bar, failure design, margin, and a feature killed on evidence. The kill bullet matters because reviewers want PMs who say no as well as ship.',
+            },
+            {
+              title: 'Product Manager',
+              org: 'Helpwise',
+              place: 'Chicago',
+              dates: 'Mar 2020 – Jan 2023',
+              bullets: [
+                'Owned ticket routing for 6k accounts; rebuilt it around an ML classifier with the data science team, lifting first-assignment accuracy from 72% to 89%.',
+                'Led the self-serve plan launch across product, sales and marketing, adding 2,300 small-business accounts in its first year.',
+              ],
+              why: 'An earlier ML project shows the move into AI products grew from real work. The launch bullet keeps classic PM craft visible, which matters because AI PMs are still judged as PMs first.',
+            },
+            {
+              title: 'Associate Product Manager',
+              org: 'Brightlane · HR software',
+              place: 'Remote',
+              dates: 'Jul 2018 – Feb 2020',
+              bullets: [
+                'Shipped onboarding checklists used by 70% of new customers in their first week; cut setup-related support tickets 22%.',
+              ],
+              why: 'The earliest role shrinks to one outcome-focused line.',
+            },
+          ],
+        },
+        {
+          heading: 'Writing & side projects',
+          bullets: [
+            '“Setting a launch bar for LLM features,” newsletter post on eval-based go/no-go decisions, 11k reads.',
+            'Built a working prototype of a contract-review assistant with AI coding tools to test a pricing hypothesis with 12 prospects before engineering committed.',
+          ],
+          why: 'Writing proves the candidate can explain AI tradeoffs. The prototype shows hands-on fluency, which AI PM loops increasingly test in live prototyping rounds.',
+        },
+        {
+          heading: 'Education',
+          bullets: ['B.S. Industrial Engineering, Purdue University, 2018'],
+          why: 'One line at the bottom. An engineering degree helps a little, but shipped AI products carry the resume.',
+        },
+      ],
+    },
+    mistakes: [
+      'One accuracy number with no launch threshold, failure breakdown or baseline',
+      'AI buzzwords (GenAI, agents, LLMs) with no owned outcome behind them',
+      'A traditional PM resume with a single “added AI” bullet',
+      'Promising the model will stop making mistakes instead of describing how the product handles them',
+      'Ignoring inference cost, margin or pricing',
+      'Crediting the team for everything, so your own decisions are invisible',
+    ],
+  },
 ]
 
 export const CHECKLIST = [
@@ -228,7 +336,7 @@ export const CHECKLIST = [
   'Put a number on every outcome, ideally against a baseline',
   'Mirror the posting’s own terms in your skills and bullets, but only skills you can defend',
   'Link GitHub, a portfolio or a write-up. Reviewers do click.',
-  'Tailor per company: data-heavy FDE roles stress decomposition and data engineering; AI labs stress production LLM systems',
+  'Tailor per company: data-heavy FDE roles stress decomposition and data engineering; AI labs stress production LLM systems; AI PM roles stress quality bars and business outcomes',
 ]
 
 export function resumeToText(r) {
