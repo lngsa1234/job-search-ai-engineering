@@ -485,3 +485,246 @@ body {
 .card__outline li {
   margin-bottom: 4px;
 }
+
+/* Resume Tips */
+.resume-intro h1 {
+  margin: 0 0 6px;
+  font-size: 26px;
+}
+
+.resume-intro__tagline {
+  margin: 0 0 16px;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.resume-intro__look {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+
+.resume-intro__look .sidebar__heading {
+  display: block;
+  margin: 0 0 6px;
+}
+
+.resume-intro__look ul,
+.mistakes ul,
+.checklist {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.resume-intro__look li,
+.mistakes li {
+  margin-bottom: 4px;
+}
+
+.checklist {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.checklist li {
+  margin-bottom: 6px;
+}
+
+.toggle-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.resume-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 20px;
+}
+
+.resume-row--nonotes {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* The resume itself is printed-page style: light paper in both themes */
+.paper {
+  background: #fdfdfb;
+  color: #1d2230;
+  padding: 4px 32px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.paper--first {
+  border-radius: 6px 6px 0 0;
+  padding-top: 28px;
+}
+
+.paper--last {
+  border-radius: 0 0 6px 6px;
+  padding-bottom: 28px;
+}
+
+.paper__header {
+  text-align: center;
+  padding-bottom: 6px;
+}
+
+.paper__name {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.paper__title {
+  font-size: 15px;
+  color: #3b4357;
+}
+
+.paper__contact {
+  font-size: 12.5px;
+  color: #4b5469;
+  margin-top: 4px;
+}
+
+.paper__section {
+  padding: 8px 0;
+}
+
+.paper__heading {
+  margin: 0 0 6px;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #c9ccd4;
+  padding-bottom: 3px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.paper__text {
+  margin: 0;
+}
+
+.paper__skills {
+  margin: 0;
+}
+
+.paper__skills div {
+  display: flex;
+  gap: 8px;
+}
+
+.paper__skills dt {
+  font-weight: 700;
+  flex: 0 0 120px;
+}
+
+.paper__skills dd {
+  margin: 0;
+}
+
+.paper__jobhead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.paper__dates {
+  color: #4b5469;
+  font-style: italic;
+}
+
+.paper__bullets {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}
+
+.paper__bullets li {
+  margin-bottom: 3px;
+}
+
+.why {
+  align-self: start;
+  margin: 8px 0;
+  padding: 10px 12px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.why__label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.why p {
+  margin: 0;
+}
+
+.resume-disclaimer {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 10px 0 28px;
+}
+
+.mistakes {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+}
+
+.mistakes h2 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+@media (max-width: 900px) {
+  .resume-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .why {
+    margin: 0;
+    border-radius: 0;
+  }
+  .paper {
+    padding: 4px 18px;
+  }
+  .paper__skills div {
+    flex-direction: column;
+    gap: 0;
+  }
+  .paper__skills dt {
+    flex-basis: auto;
+  }
+}

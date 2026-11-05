@@ -3,7 +3,7 @@ export default function ComingSoon({ title }) {
     <section className="section">
       <div className="coming-soon">
         <h1>{title}</h1>
-        <p>This section is coming soon. Interview Questions is ready now.</p>
+        <p>This section is coming soon. Interview Questions and Resume Tips are ready now.</p>
       </div>
     </section>
   )

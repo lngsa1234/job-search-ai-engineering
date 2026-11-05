@@ -2,10 +2,11 @@ import { useState } from 'react'
 import Header from './components/Header.jsx'
 import InterviewQuestions from './components/InterviewQuestions.jsx'
 import ComingSoon from './components/ComingSoon.jsx'
+import ResumeTips from './components/ResumeTips.jsx'
 
 const SECTIONS = [
   { id: 'interview', label: 'Interview Questions', available: true },
-  { id: 'resume', label: 'Resume Tips', available: false },
+  { id: 'resume', label: 'Resume Tips', available: true },
   { id: 'companies', label: 'Companies', available: false },
   { id: 'applications', label: 'Application Tracker', available: false },
 ]
@@ -23,6 +24,8 @@ export default function App() {
       <main className="main">
         {section === 'interview' ? (
           <InterviewQuestions />
+        ) : section === 'resume' ? (
+          <ResumeTips />
         ) : (
           <ComingSoon title={SECTIONS.find((s) => s.id === section)?.label} />
         )}
