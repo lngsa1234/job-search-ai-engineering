@@ -6967,7 +6967,20 @@
       "source": {
         "label": "AI PM Question Bank, Q64",
         "url": "https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/roles/ai-product-manager/questions.md"
-      }
+      },
+      "companies": [
+        "openai"
+      ],
+      "importAddedCompanies": [
+        "openai"
+      ],
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md",
+          "importTag": "company-pm-2026-11"
+        }
+      ]
     },
     {
       "id": 689,
@@ -7482,6 +7495,1212 @@
         "label": "AI PM Question Bank, Q94",
         "url": "https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/roles/ai-product-manager/questions.md"
       }
+    },
+    {
+      "id": 719,
+      "question": "How would you improve ChatGPT for enterprise customers?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "Improving an enterprise assistant starts with a segment and one workflow, not a feature list. I would look for a recurring task where the answer already exists inside the company but is expensive to find and assemble, for example drafting a response against internal policies, and describe a specific user and the point where they get stuck. Then an honest comparison: if search, a template or rules solve it, the model is not needed. For enterprise customers demos do not decide anything, integration and trust do: sign in through corporate accounts, permissions inherited from the source, logging, and requirements on data storage and processing. I would bound the pilot with an outcome announced in advance: time on task, share of tasks finished without rework, quality guardrails, and the condition for expanding. The weakness of pilots is that enthusiasts do not predict behaviour under mandatory rollout.",
+      "hint": "Whether you select a specific workflow and justify its business value.",
+      "outline": [
+        "Choose a customer segment, user and costly workflow problem.",
+        "Compare AI and non-AI solutions, integration effort and trust requirements.",
+        "Define a pilot outcome, quality guardrails and a rollout decision."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: OpenAI Product Manager (PM) Interview Guide",
+          "url": "https://www.tryexponent.com/guides/openai-product-manager-interview"
+        },
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 720,
+      "question": "A model offers much greater capability but costs ten times as much. How would you decide what product to build with it?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "The question is whether gains make previously untrusted tasks acceptable: where mandatory human review was required before and spot checks are now enough. You count not the price of a token but the cost of a successfully completed workflow, including retries, review and the cost of error. Three attempts of a cheap model still cost less in tokens than one of a model ten times the price, so the expensive one wins where the cheap one can't reach the bar at any number of retries, or where human review time and the cost of a mistake dominate the bill. You pay in latency, complexity and dependence on a single provider. I'd measure that cost on my own task set, test willingness to pay on a narrow segment, and turn on selective routing: the expensive model only for hard cases or cases where an error is costly, the cheap one as the base. The limit is that if users don't notice the difference in outcome, no quality gain pays for itself, and prices and capabilities move faster than product plans.",
+      "hint": "Whether you translate capability into willingness to pay and unit economics.",
+      "outline": [
+        "Identify tasks where the improvement changes the feasible outcome.",
+        "Estimate cost per successful workflow, including retries and human review.",
+        "Test willingness to pay and consider selective routing before broad deployment."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: OpenAI Product Manager (PM) Interview Guide",
+          "url": "https://www.tryexponent.com/guides/openai-product-manager-interview"
+        },
+        {
+          "label": "AI for Product Managers: technical question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/02-technical.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 721,
+      "question": "How do you decide whether an LLM is useful for a proposed product problem?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "google-deepmind-and-google-ai"
+      ],
+      "answer": "An LLM earns its place where inputs are too messy for rules and a mistake is cheap or caught before it does harm, and I establish that from the job, not the model: what the user is trying to do, how it's done today, what an error costs and who sees it. The non-obvious trade-off is coverage against variability: the model handles free text and odd documents that rules can't parse, but the same input can give different outputs, and its failures can't be listed in advance the way a rule's can. Where the value is exact repeatability, the model is at most an interface over a deterministic system. Then I check data access, whether correct can be defined and labelled, and the latency budget. The comparison is the LLM against the best simple baseline on labelled real cases, scoring the error that matters weighted by its cost, plus cost and latency per task, with a rejection rule stated up front. If correct can't be defined or labelled, the answer is no LLM yet: build the measurement first.",
+      "hint": "Whether you start with the task and evidence rather than the technology.",
+      "outline": [
+        "Describe the job, baseline solution and cost of mistakes.",
+        "Check data access, evaluability, latency and the need for predictable behaviour.",
+        "Run a bounded comparison and name a reason to reject the LLM approach."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Gemini Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/gemini-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 722,
+      "question": "Design a Gemini-based assistant for university students.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "google-deepmind-and-google-ai"
+      ],
+      "answer": "I would drop the universal helper and pick one segment with one recurring need, say first year students preparing for an exam in a specific subject, and make the course materials the source rather than the whole internet. The flow is built around understanding: the assistant works through the mistake, asks questions back and points to the place in the materials instead of producing the finished assignment; uncertainty is stated out loud, and copying is treated as the main abuse model and limited in the product, with academic integrity rules in mind. I would measure task success, learning value through a delayed knowledge check, and only then retention. That is exactly where the boundary runs: retention can grow from harm, because students love an assistant that does the work for them even though it makes their learning worse, and without a learning metric you will not see it.",
+      "hint": "Whether a clear user need drives scope, learning outcomes and safeguards.",
+      "outline": [
+        "Pick a student segment and one recurring unmet need.",
+        "Design a usable flow with uncertainty, verification and misuse in mind.",
+        "Measure task success and learning value alongside retention."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Gemini Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/gemini-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 723,
+      "question": "Users say Gemini gives incorrect answers with excessive confidence. What would you change?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "google-deepmind-and-google-ai"
+      ],
+      "answer": "First I would stop treating this as one problem and split the complaints by cause: the model does not know the fact, retrieval brought back the wrong thing or nothing, or the answer is presented so that the confidence does not match the grounds. Those are three different fixes. Grounding in sources reduces invention but adds latency and moves quality onto retrieval; abstention can reduce exposure to wrong answers but irritates people when it fires without reason; interface changes like showing citations and marking unverified claims are cheap and shift trust without touching the model. So I would compare those options on the same task set rather than by feel, and watch the share of claims with no source support, useful task completion, and regressions by segment. Calibration aligns confidence with observed correctness; it does not fix factual errors. Abstention and interface choices change exposure, and warnings may be ignored.",
+      "hint": "Whether you diagnose failure types and improve calibrated user trust.",
+      "outline": [
+        "Collect representative failures and separate knowledge, retrieval and presentation issues.",
+        "Compare grounding, abstention and interaction changes on the same tasks.",
+        "Track unsupported claims, useful task completion and segment-level regressions."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Gemini Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/gemini-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 724,
+      "question": "How would you prioritise features for an AI writing assistant in Microsoft Word?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "microsoft"
+      ],
+      "answer": "Prioritisation starts by splitting writing into distinct tasks: drafting from scratch, rewriting an existing passage, shortening, fixing tone and grammar, and merging several documents. For each I'd find the point where the person gets stuck today and compare expected value, quality risk, engineering cost and dependencies such as access rights to the document. The risk here is asymmetric: a suggestion next to the text is cheap when it is wrong, while a sweeping edit of someone else's document is expensive, so tasks with a visible, reversible result on a selected fragment come first. The first release should be narrow, and I'd measure not the volume generated but the assistance a user accepted: the share of inserted text still in the document later, and the share of undos. The limit is that acceptance is not quality, people accept an edit to avoid arguing, so text quality needs a separate check.",
+      "hint": "Whether prioritisation accounts for user value, reliability and workflow fit.",
+      "outline": [
+        "Segment writing tasks and identify friction in the existing workflow.",
+        "Compare expected value, quality risk, engineering cost and dependencies.",
+        "Choose a narrow first release and measure accepted, useful assistance."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Microsoft AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/microsoft-ai-product-manager-interview"
+        },
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 725,
+      "question": "How would you measure success for an AI feature in a Microsoft product?",
+      "category": "pm-evaluation-and-metrics",
+      "role": "pm",
+      "companies": [
+        "microsoft"
+      ],
+      "answer": "Success is an observable completed task, and model metrics explain why it moves but never prove value. Take a feature that drafts replies: success is a draft that gets sent with light edits. Then I'd keep the layers apart: adoption as the share of eligible users who tried it, retention as the share still using it weeks later, task quality as the share of drafts sent and how much was edited or discarded, p95 latency, and cost per sent draft, with eval-set scores underneath as diagnosis. The real trade-off is the comparison: a holdout group is the only clean read on cause, but it withholds the benefit and needs weeks to show retention, while before and after is cheap and confounded by novelty and season. Against gaming, every volume metric gets a paired quality metric that falls when volume is inflated: count an impression as usage and adoption rises while the share sent drops. The limit: even a clean experiment misses trust effects that take months, and outputs used outside the product need sampled human rating.",
+      "hint": "Whether metrics connect model behaviour to user and business outcomes.",
+      "outline": [
+        "Name the user goal and an observable successful task.",
+        "Separate adoption, retention, task quality, latency and cost.",
+        "Use a baseline or experiment and guard against metric gaming."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Microsoft AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/microsoft-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 726,
+      "question": "What North Star metric would you choose for an AI search product, and what would constrain it?",
+      "category": "pm-evaluation-and-metrics",
+      "role": "pm",
+      "companies": [
+        "perplexity"
+      ],
+      "answer": "I would make the headline metric the share of sessions with a usefully completed search task, not clicks and not time on page, because both rise when the answer is bad. Completion has to be observed indirectly: the user did not rephrase, took the next action, and if they opened a source, did not come straight back. In an answer product a click-out alone is ambiguous: it can mean checking the answer or that the answer fell short, and a satisfied user may not click at all, so these signals are calibrated against human labelling. Any single metric pushes you to an extreme, so you add guardrails around it: the share of claims with no source support, safety, latency and cost per query, and a regression in any of them cancels the gain. I would explain the denominator separately: do we count sessions or queries, what we do with bots and repeats, how we segment by language and task type. For navigational and entertainment queries completion is poorly defined, and there the metric misleads.",
+      "hint": "Whether one headline metric remains accountable to trust and task completion.",
+      "outline": [
+        "Define a valuable completed search task and how to observe it.",
+        "Add quality, safety, latency and cost guardrails.",
+        "Explain denominator, segmentation and how the metric could mislead."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Perplexity AI Product Manager (PM) Interview Guide",
+          "url": "https://www.tryexponent.com/guides/perplexity-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 727,
+      "question": "Notification engagement rises while total time spent remains flat. How would you interpret that result?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "meta-superintelligence-labs-fair-llama"
+      ],
+      "answer": "The first hypothesis is substitution: notifications may not create activity but move it out of organic visits, so total time does not change. But before explaining behaviour I would check the measurement: do the definitions of engagement and time match, did impressions simply grow, are cohorts of new and existing users mixed together, and was this an experiment with a control or a before and after comparison. Then the substantive question: do notifications lead to actions that would not have happened otherwise, or to the same actions just earlier. Look at opt-outs and unsubscribes, complaints, satisfaction and retention over a long horizon, because a short-term rise in clicks is often paid for by losing the channel. Finally, flat time does not by itself mean there is no value: the product may have become more useful in less time, and that is a fine outcome.",
+      "hint": "Whether you distinguish substitution, measurement artifacts and real user value.",
+      "outline": [
+        "Check definitions, exposure, cohorts and the experiment setup.",
+        "Test whether notifications shift existing activity or create valuable new actions.",
+        "Include opt-outs, satisfaction and longer-term effects before deciding."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Meta Product Manager, AI Interview Experience (level unverified)",
+          "url": "https://www.tryexponent.com/experiences/meta-facebook-product-manager-interview-618bfd"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 728,
+      "question": "Choose an AI agent or product you use and propose its most valuable improvement.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "amazon-aws"
+      ],
+      "answer": "Pick a product you use often enough to have watched it fail repeatedly in real work, and choose the failure where your own workaround costs the most. The interviewer is scoring whether your judgement rests on observed friction with a frequency and a cost rather than on a feature you'd like, so say how often it happens, what it costs in time or redone work, and what you do instead. Then show prioritisation: name two or three other improvements and rank them on frequency, cost and how many users plausibly share the problem, admitting where your own usage is unusual. Close with the cheapest test of the hypothesis, often a mock-up or a person simulating the behaviour behind the interface, with one success criterion fixed in advance and the side effect you'd watch, since most fixes cost latency, privacy or extra steps. The usual mistake is a wish list or invented internal metrics. From outside you can't measure the effect directly, so say so and name a proxy you could observe, such as retries or abandoned sessions.",
+      "hint": "Whether product judgement rests on observed friction and a testable hypothesis.",
+      "outline": [
+        "Describe a real workflow and where the product fails the user.",
+        "Explain why the proposed improvement outranks alternatives.",
+        "Specify a prototype, success measure and possible adverse effect."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Amazon AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/amazon-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 729,
+      "question": "You have invented a memory machine that generates video, images, smells and sounds. How would you bring it to market?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "hint": "Whether you turn an unfamiliar capability into a focused market entry.",
+      "outline": [
+        "Choose one beachhead user and occasion, and only the senses that occasion actually needs.",
+        "Measure repeat paid use, with guardrails on user distress and the consent of people depicted.",
+        "Test willingness to pay with a hand-run concierge pilot before building scent hardware."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: OpenAI Product Manager (PM) Interview Guide",
+          "url": "https://www.tryexponent.com/guides/openai-product-manager-interview"
+        },
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        },
+        {
+          "label": "AI for Product Managers: strategy question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/03-strategy.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 730,
+      "question": "Which business use cases suit AI agents, and how would you compare them?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "microsoft"
+      ],
+      "answer": "I rank candidates on a few properties rather than on enthusiasm. Volume and repetition, because the payoff is per execution; a verifiable outcome, so success can be checked without a human reading everything; tolerance for error, since an agent will be wrong sometimes and the question is what that costs; and whether the actions are reversible. Support triage, back-office data work and research-and-summarise tasks usually score well; anything irreversible and regulated usually does not. The comparison I insist on is against the cheaper thing: a single prompt, a fixed workflow, or ordinary automation. Autonomy is worth paying for only when the path genuinely varies per case, because agents cost more per task and add supervision, audit and incident work that never appears in the demo. So I would pilot with the hardest measurable slice, and count the human minutes spent correcting it, not just the tasks completed.",
+      "hint": "Whether you distinguish the value of autonomous action from its operational cost.",
+      "outline": [
+        "Score candidates on volume, a verifiable outcome, tolerance for error and reversibility.",
+        "Separate the value of the action taken from the cost of supervising and correcting it.",
+        "Compare against the cheaper option: a prompt, a fixed workflow or ordinary automation."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Microsoft AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/microsoft-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 731,
+      "question": "Explain the product trade-offs in choosing a model.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "microsoft"
+      ],
+      "answer": "I'd fix the task and a pass criterion before running anything, on real product examples, because leaderboard gaps can shrink or reverse on your own distribution. For each candidate I'd measure pass rate, cost per passing output including retries and the human time spent fixing failures, and p95 latency end to end with retrieval and tool calls, since that's what the user waits for. The non-obvious trade-off is with reasoning models: they can lift the pass rate and still lose on cost and latency, because their reasoning tokens are billed as output and spent before the answer starts. That can win a batch task and disqualify an interactive one, which is why routing only the hard cases to them often beats choosing one model. Then the constraints act as filters, not weights: where the model may run, what data may be sent and whether the provider keeps it, and how often versions change or retire. If only one model clears them, there's nothing to compare, and the real work is keeping the evaluation runnable for its next version.",
+      "hint": "Whether model selection considers task quality, cost, latency and constraints together.",
+      "outline": [
+        "Fix the task and a quality bar first, then measure candidate models on your own data.",
+        "Compare cost per successful outcome and latency as the user experiences it.",
+        "Add the constraints that disqualify a model: deployment region, data handling, change over time."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Microsoft AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/microsoft-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 732,
+      "question": "Propose a new feature for Perplexity and explain whom it serves.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "perplexity"
+      ],
+      "answer": "",
+      "hint": "Whether you can make a differentiated, evidence-seeking product proposal.",
+      "outline": [
+        "Pick one segment and a recurring research job that users still finish outside the product.",
+        "Explain why rivals cannot simply copy it, and measure completed tasks with a citation-accuracy guardrail.",
+        "Test the riskiest assumption cheaply with a fake-door test or a manual prototype for target users."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Perplexity AI Product Manager (PM) Interview Guide",
+          "url": "https://www.tryexponent.com/guides/perplexity-ai-product-manager-interview"
+        },
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 733,
+      "question": "Design a product connecting local tradespeople with customers.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "meta-superintelligence-labs-fair-llama"
+      ],
+      "answer": "",
+      "hint": "Whether you reason about both sides of a marketplace and initial liquidity.",
+      "outline": [
+        "Name both sides, the decision each makes, and what each must trust: vetting, price, payment.",
+        "Measure requests ending in a completed job and time to match, guarded by disputes and repeat bookings.",
+        "Launch in one area and one trade, recruiting tradespeople by hand before automating the match."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Meta Product Manager, AI Interview Experience (level unverified)",
+          "url": "https://www.tryexponent.com/experiences/meta-facebook-product-manager-interview-618bfd"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 734,
+      "question": "A new service grows while Facebook monthly active users decline. How would you assess whether the service is succeeding?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "meta-superintelligence-labs-fair-llama"
+      ],
+      "answer": "",
+      "hint": "Whether you investigate portfolio effects instead of reading one metric in isolation.",
+      "outline": [
+        "Ask whether the service should add new users and time or move existing time between apps.",
+        "Estimate substitution with a holdout or matched cohorts, not by comparing the two curves.",
+        "Judge it on net portfolio users and value, with the core product's health as a guardrail."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Meta Product Manager, AI Interview Experience (level unverified)",
+          "url": "https://www.tryexponent.com/experiences/meta-facebook-product-manager-interview-618bfd"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 735,
+      "question": "Design a volunteer-matching product and explain how it gets through cold start.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "meta-superintelligence-labs-fair-llama"
+      ],
+      "answer": "",
+      "hint": "Whether you make the first useful matches possible before scale arrives.",
+      "outline": [
+        "Pick which side is scarce, then narrow to one city and cause where matches can happen.",
+        "Measure posted needs filled by a completed shift, with no-shows and organiser churn as guardrails.",
+        "Match the first organisations and volunteers by hand to test whether matches turn into shifts."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (ai-product-strategy)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/ai-product-strategy.yaml"
+        },
+        {
+          "label": "Reported in: Meta Product Manager, AI Interview Experience (level unverified)",
+          "url": "https://www.tryexponent.com/experiences/meta-facebook-product-manager-interview-618bfd"
+        },
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 736,
+      "question": "Tell me about a time you disagreed with someone and could not persuade them.",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "amazon-aws"
+      ],
+      "answer": "What matters in this answer is what happened after the argument, not the argument itself. Put both positions fairly and in their strongest form: if the other side sounds stupid, the interviewer decides you were listening badly. Give your own evidence and how you put it across, in conversation, in a written document, through data. Then say clearly who made the decision and why it was theirs to make, and describe how you backed the agreed action: you object before the decision, and after it you deliver, without quiet sabotage. Name the result, even if it proved you right, but without any triumph. Mark the limit as well: what you would not have done, and in what situation you would escalate. Finish with the conclusion, usually about what your argument was missing or who you should have gone to earlier.",
+      "hint": "Whether you work constructively after losing an argument.",
+      "outline": [
+        "State both positions fairly and explain your evidence.",
+        "Describe the decision process and how you supported the agreed action.",
+        "Explain the result, limits of commitment and what you learned."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (behavioral-values)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/behavioral-values.yaml"
+        },
+        {
+          "label": "Reported in: Amazon AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/amazon-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 737,
+      "question": "Tell me about an AI decision you owned that had significant downstream consequences.",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "amazon-aws"
+      ],
+      "answer": "",
+      "hint": "Whether you consider impact beyond your immediate deliverable.",
+      "outline": [
+        "Choose a decision whose effects reached people outside your team: users, operators, downstream systems or partners.",
+        "Show which second-order effects you anticipated, which you missed, and how you weighed them at the time.",
+        "Close with how you monitored the consequences after launch and what you changed in response."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (behavioral-values)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/behavioral-values.yaml"
+        },
+        {
+          "label": "Reported in: Amazon AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/amazon-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 738,
+      "question": "How do you manage conflict when the situation is urgent?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "hint": "Whether urgency changes the decision process without eliminating respect and accountability.",
+      "outline": [
+        "Make the decision owner and deadline explicit first, so urgency shortens debate rather than removing it.",
+        "Hear each side briefly, prefer a reversible step, and record dissent instead of overriding it silently.",
+        "Revisit after the pressure passes: review the decision, repair relationships, and fix what caused the urgency."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (behavioral-values)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/behavioral-values.yaml"
+        },
+        {
+          "label": "Reported in: OpenAI Product Manager (PM) Interview Guide",
+          "url": "https://www.tryexponent.com/guides/openai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 739,
+      "question": "What is the largest failure you have experienced as a product manager?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "hint": "Whether you can discuss product judgement, consequences and changed practice honestly.",
+      "outline": [
+        "Pick a failure that is truly large and rooted in your own product judgement, not in others' execution.",
+        "Reconstruct what you believed then, which signal you discounted, and what it cost users and the business.",
+        "Close with the practice you changed, such as how you validate demand, and a later decision it improved."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (behavioral-values)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/behavioral-values.yaml"
+        },
+        {
+          "label": "Reported in: OpenAI Product Manager (PM) Interview Guide",
+          "url": "https://www.tryexponent.com/guides/openai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 740,
+      "question": "How would you convince engineers that a proposed product feature is worth building?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "perplexity"
+      ],
+      "answer": "",
+      "hint": "Whether you engage technical concerns and establish a shared reason to invest.",
+      "outline": [
+        "Bring the user problem and the evidence behind it, not the feature, so engineers can judge the reasoning.",
+        "Treat objections about cost, complexity or maintenance as inputs that can reshape scope, not as resistance.",
+        "Agree a success metric and a cheap first version, and commit to cutting it if the metric misses."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (engineering-leadership)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/engineering-leadership.yaml"
+        },
+        {
+          "label": "Reported in: Perplexity AI Product Manager (PM) Interview Guide",
+          "url": "https://www.tryexponent.com/guides/perplexity-ai-product-manager-interview"
+        },
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 741,
+      "question": "Walk through the most difficult product launch you led.",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "Pick a launch with a decision you drove that could have gone the other way, hard because of dependencies you didn't control, not volume or long hours. Give the frame briefly, the goal, hard constraints on date, quality or regulation, the critical path, and cut team history, tooling and the full timeline. The interviewer is separating your contribution from the team's, so speak in the first person singular for your own decisions and the plural for the team's work, and expect probing there. Then unpack the one decision: the options, what you knew, what you gave up, and how the people it cost came to accept it. Say how readiness was defined before the date, with launch criteria, a rollback plan and on-call cover. Close with evidence: which criteria were met or missed in the terms promised beforehand, and the single process change you carried into later launches, with a sign it worked. The usual mistakes are an overview where you never decide anything and a victory report where no bet went wrong.",
+      "hint": "Whether you can explain dependencies, decisions and your contribution to the result.",
+      "outline": [
+        "Set out the goal, constraints, stakeholders and critical dependencies.",
+        "Explain a consequential decision, alternatives and how you kept people aligned.",
+        "State the realised outcome and what you changed for later launches."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (program-delivery)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/program-delivery.yaml"
+        },
+        {
+          "label": "Reported in: OpenAI Product Manager (PM) Interview Guide",
+          "url": "https://www.tryexponent.com/guides/openai-product-manager-interview"
+        },
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 742,
+      "question": "Three weeks before launching an LLM feature, evaluation reveals substantial hallucinations on edge cases. What happens next?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "amazon-aws"
+      ],
+      "answer": "The first thing I do is stop discussing the date and establish the shape of the risk: how severe the consequences of this error are, how often it appears on the real distribution of requests, who it hits, and how trustworthy the evaluation itself is, since a small or unrepresentative eval set can both exaggerate a problem and hide it. I compare the options on one scale of harm and cost: narrow the feature to the cases where it's reliable, add human review or an honest refusal, fix the cause in retrieval and prompts, or move the launch. Each option pays something: narrowing costs value, a human in the loop costs speed and money. I name an owner for the launch decision, written exit criteria, and a communication plan for users and support. None of this helps if the edge-case error is irreversible: then there's no launch to discuss.",
+      "hint": "Whether you make a risk-based launch decision rather than protecting the date at any cost.",
+      "outline": [
+        "Check severity, prevalence, affected users and the reliability of the evaluation.",
+        "Compare narrowing scope, adding review, fixing causes and delaying release.",
+        "Assign a decision owner, explicit exit criteria and a communication plan."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (program-delivery)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/program-delivery.yaml"
+        },
+        {
+          "label": "Reported in: Amazon AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/amazon-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 743,
+      "question": "How would you roll out updates to Alexa devices already deployed in people's homes?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "amazon-aws"
+      ],
+      "answer": "Updating home devices means operating in someone else's environment: different models and firmware versions, weak Wi-Fi, a socket switched off halfway through the install. I assess: changes, affected devices, whether protocol compatibility with older versions holds, how large the package is and when to download it so the user isn't disturbed. Then I ship in waves: our own devices, a small group, then wider cohorts with a health check after install and a metric of devices that came back online, not just ones that received the package. The install has to be atomic, with a backup image and an automatic return to the previous version after a failed boot or health check. I set the thresholds for pausing the rollout, the owner of the rollback call, and what support will see. None of this saves you from a defect in the update mechanism itself: that may require a service visit.",
+      "hint": "Whether you account for fleet diversity, interrupted updates and safe rollout.",
+      "outline": [
+        "Clarify update scope, compatibility, connectivity and user disruption.",
+        "Use controlled cohorts, health checks and recoverable installation.",
+        "Define rollout pauses, rollback ownership and support communication."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (program-delivery)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/program-delivery.yaml"
+        },
+        {
+          "label": "Reported in: Amazon AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/amazon-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 744,
+      "question": "Describe an AI product you built from scratch and how you took it through delivery.",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "microsoft"
+      ],
+      "answer": "",
+      "hint": "Whether you can explain a complete delivery path rather than only a prototype.",
+      "outline": [
+        "Pick a product that reached real users, and open with the problem and why AI fitted it.",
+        "Spend most of the answer on the prototype-to-production gap: evaluation set, quality bar, failure handling, launch decision.",
+        "Close with adoption and outcome after launch, and how quality was monitored and improved once real traffic arrived."
+      ],
+      "sources": [
+        {
+          "label": "AI Interview Atlas (program-delivery)",
+          "url": "https://github.com/eiler2005/ai-interview-atlas/blob/main/src/content/questions/program-delivery.yaml"
+        },
+        {
+          "label": "Reported in: Microsoft AI Product Manager Interview Guide",
+          "url": "https://www.tryexponent.com/guides/microsoft-ai-product-manager-interview"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 745,
+      "question": "Imagine you're leading the team for the ChatGPT 6 rollout. How would you launch it?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 746,
+      "question": "Design a solution to communicate with pets using AI.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 747,
+      "question": "Analyze a current OpenAI product and propose three improvements to enhance user engagement.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 748,
+      "question": "How would you approach safety in a consumer AI product?",
+      "category": "pm-responsible-ai-safety-and-agents",
+      "role": "pm",
+      "companies": [
+        "anthropic"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 749,
+      "question": "How would you handle a Claude feature producing confident but incorrect answers?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "anthropic"
+      ],
+      "answer": "",
+      "hint": "design the trust/failure UX + eval story",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 750,
+      "question": "Define success metrics for a new Claude feature that balances user value and risk reduction.",
+      "category": "pm-evaluation-and-metrics",
+      "role": "pm",
+      "companies": [
+        "anthropic"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 751,
+      "question": "Design a map application for Meta.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "meta-superintelligence-labs-fair-llama"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 752,
+      "question": "Design a parking solution for Google Maps.",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "meta-superintelligence-labs-fair-llama"
+      ],
+      "answer": "",
+      "hint": "classic product sense, still asked",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 753,
+      "question": "You're the PM for Facebook notifications on mobile. Why would Meta build this, and how would you measure success?",
+      "category": "pm-evaluation-and-metrics",
+      "role": "pm",
+      "companies": [
+        "meta-superintelligence-labs-fair-llama"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 754,
+      "question": "Do you have a favorite AI tool? Why, and how would you make it better?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "microsoft"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 755,
+      "question": "What would be a novel product or business in the self-driving car space?",
+      "category": "pm-capability-judgment-and-product-sense",
+      "role": "pm",
+      "companies": [
+        "perplexity"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: product design question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/01-product-design.md"
+        },
+        {
+          "label": "AI for Product Managers: strategy question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/03-strategy.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 756,
+      "question": "What guardrail metrics would you track?",
+      "category": "pm-evaluation-and-metrics",
+      "role": "pm",
+      "companies": [
+        "perplexity"
+      ],
+      "answer": "",
+      "hint": "pick a feature and name 3-4: hallucination/faithfulness rate, refusal correctness, latency p95, safety violation rate, cost/query",
+      "sources": [
+        {
+          "label": "AI for Product Managers: technical question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/02-technical.md"
+        },
+        {
+          "label": "AI for Product Managers: execution metrics question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/04-execution-metrics.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 757,
+      "question": "How would you balance product velocity with safety constraints?",
+      "category": "pm-responsible-ai-safety-and-agents",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "hint": "concrete mechanisms beat philosophy: risk-tiered launch gates, eval bars scaled to stakes, canary rollouts, red-team budgets; \"we go fast where errors are cheap and slow where they aren't\"",
+      "sources": [
+        {
+          "label": "AI for Product Managers: technical question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/02-technical.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 758,
+      "question": "How would you measure success for OpenAI? What if instrumentation went down?",
+      "category": "pm-business-and-strategy",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "hint": "company-level metric tree, then judgment-under-blindness: leading proxies, qualitative signals, finance data",
+      "sources": [
+        {
+          "label": "AI for Product Managers: strategy question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/03-strategy.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 759,
+      "question": "How do you partner effectively with sales?",
+      "category": "pm-business-and-strategy",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "hint": "B2B AI: sales feeds the failure/objection loop back into evals and roadmap",
+      "sources": [
+        {
+          "label": "AI for Product Managers: strategy question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/03-strategy.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 760,
+      "question": "Define a north star metric for Instagram Reels, and explain the trade-off if you prioritize Reels over Stories.",
+      "category": "pm-evaluation-and-metrics",
+      "role": "pm",
+      "companies": [
+        "meta-superintelligence-labs-fair-llama"
+      ],
+      "answer": "",
+      "hint": "the conflicting-metrics pattern: find the shared upstream goal, state the decision rule, name the counter-metric",
+      "sources": [
+        {
+          "label": "AI for Product Managers: execution metrics question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/04-execution-metrics.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 761,
+      "question": "Tell me about a time you cut scope to ship faster.",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "hint": "execution behavioral; have the story with the tradeoff reasoning explicit",
+      "sources": [
+        {
+          "label": "AI for Product Managers: execution metrics question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/04-execution-metrics.md"
+        },
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 762,
+      "question": "If you were already an OpenAI PM on this team, what would you do and why?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "hint": "do the homework: know the team's product surface, have a 90-day PoV",
+      "sources": [
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 763,
+      "question": "Can you give an example of a trade-off between user experience and technical feasibility?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "openai"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 764,
+      "question": "Why Anthropic, and what draws you to AI safety?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "anthropic"
+      ],
+      "answer": "",
+      "hint": "specificity test: name the writings/ideas that actually moved you",
+      "sources": [
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 765,
+      "question": "What are some unusual beliefs you hold, and how have you defended them?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "anthropic"
+      ],
+      "answer": "",
+      "hint": "tests independent thinking + intellectual courage; a safe, rehearsed-sounding answer IS a failing answer",
+      "sources": [
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 766,
+      "question": "What concerns do you have with Anthropic's direction?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "anthropic"
+      ],
+      "answer": "",
+      "hint": "genuine, informed disagreement scores; flattery doesn't",
+      "sources": [
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 767,
+      "question": "Tell me about a time you did something that conflicted with your values.",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "anthropic"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 768,
+      "question": "Tell me about a time you received harsh or critical feedback.",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "meta-superintelligence-labs-fair-llama"
+      ],
+      "answer": "",
+      "sources": [
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 769,
+      "question": "Tell me about an AI product from your resume. What did you like and dislike about it?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "microsoft"
+      ],
+      "answer": "",
+      "hint": "have the balanced critique ready",
+      "sources": [
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
+    },
+    {
+      "id": 770,
+      "question": "What experience do you have building AI features?",
+      "category": "pm-execution-and-behavioral",
+      "role": "pm",
+      "companies": [
+        "perplexity"
+      ],
+      "answer": "",
+      "hint": "if the honest answer is thin, build the portfolio before you apply",
+      "sources": [
+        {
+          "label": "AI for Product Managers: behavioral question bank",
+          "url": "https://github.com/ombharatiya/AI-for-Product-Managers/blob/main/07-interview-prep/question-bank/05-behavioral.md"
+        }
+      ],
+      "importTag": "company-pm-2026-11"
     }
   ]
 }

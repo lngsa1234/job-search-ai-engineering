@@ -3,6 +3,10 @@ import { useState } from 'react'
 export default function QuestionCard({ question, categoryLabel, companyLabel }) {
   const [open, setOpen] = useState(false)
   const companies = question.companies || []
+  const sources = [
+    ...(question.source ? [question.source] : []),
+    ...(question.sources || []),
+  ]
 
   return (
     <article className={'card' + (open ? ' card--open' : '')}>
@@ -36,12 +40,31 @@ export default function QuestionCard({ question, categoryLabel, companyLabel }) 
 
       {open && (
         <div className="card__answer">
+          {question.hint && (
+            <p className="card__hint">
+              <strong>What they're looking for:</strong> {question.hint}
+            </p>
+          )}
           {question.answer ? (
             <p className="card__prose">{question.answer}</p>
           ) : (
-            <p className="card__prose card__prose--muted">
-              Answer coming soon.
-            </p>
+            !question.outline?.length && (
+              <p className="card__prose card__prose--muted">
+                {question.hint
+                  ? 'No model answer yet. Use the hint above to frame your own.'
+                  : 'Answer coming soon.'}
+              </p>
+            )
+          )}
+          {question.outline?.length > 0 && (
+            <div className="card__outline">
+              <strong>Answer outline</strong>
+              <ol>
+                {question.outline.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            </div>
           )}
           {question.learnMore?.length > 0 && (
             <p className="card__links">
@@ -56,12 +79,17 @@ export default function QuestionCard({ question, categoryLabel, companyLabel }) 
               ))}
             </p>
           )}
-          {question.source && (
+          {sources.length > 0 && (
             <p className="card__source">
-              Source:{' '}
-              <a href={question.source.url} target="_blank" rel="noreferrer">
-                {question.source.label}
-              </a>
+              {sources.length === 1 ? 'Source: ' : 'Sources: '}
+              {sources.map((src, i) => (
+                <span key={src.url}>
+                  {i > 0 && ' · '}
+                  <a href={src.url} target="_blank" rel="noreferrer">
+                    {src.label}
+                  </a>
+                </span>
+              ))}
             </p>
           )}
         </div>

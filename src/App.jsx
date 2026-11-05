@@ -46,7 +46,16 @@ export default function App() {
           >
             awesome-generative-ai-guide
           </a>{' '}
-          by Aishwarya Naresh Reganti (MIT License).
+          by Aishwarya Naresh Reganti (MIT License). Company-tagged AI PM questions
+          are adapted from{' '}
+          <a href="https://github.com/eiler2005/ai-interview-atlas" target="_blank" rel="noreferrer">
+            AI Interview Atlas
+          </a>{' '}
+          (Apache-2.0) and{' '}
+          <a href="https://github.com/ombharatiya/AI-for-Product-Managers" target="_blank" rel="noreferrer">
+            AI for Product Managers
+          </a>{' '}
+          (CC BY 4.0).
         </p>
       </footer>
     </div>
